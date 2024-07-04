@@ -1,0 +1,1 @@
+CREATE SEQUENCE lift_gate_osm.users_sequence START WITH 1 INCREMENT BY 1;

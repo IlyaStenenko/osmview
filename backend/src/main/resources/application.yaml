@@ -1,0 +1,33 @@
+server:
+  port: 8089
+
+geography:
+  srid: 4326
+
+jwt:
+  expiration-time-ms: 700000
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5434/osm
+    username: postgres
+    password: postgres
+
+  jpa:
+    open-in-view: on
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        show-sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+  liquibase:
+    change-log: classpath:db/changelog/master-changelog.yaml
+
+properties:
+  hibernate:
+    dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
